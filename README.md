@@ -1,8 +1,8 @@
 # Organica - Full Stack E-commerce Project
 
-Organica is a full-stack e-commerce project built using Spring Boot, MySQL, and React.js. It handles various operations on the server side, such as managing the shopping cart and other functionalities. For security, it utilizes JWT authentication and authorization using Spring Security.
+A full-stack web application for ordering fresh vegetables online.
 
-<a href="https://hits.sh/github.com/vivekkakadiya/Organica"><img alt="Hits" src="https://hits.sh/github.com/vivekkakadiya/Organica.svg?label=Viewer%20Count&color=355C7D&labelColor=4083e9"/></a>
+
 ## Tech Stack
 
 - Backend Framework: Spring Boot
@@ -14,8 +14,15 @@ Organica is a full-stack e-commerce project built using Spring Boot, MySQL, and 
 To run this project locally, you need to have the following software installed:
 
 - JDK 17
+
 - Node.js
+
+
 - MySQL Server
+   ```shell
+  sudo apt update
+  apt install mysql-server -y
+   ```
 - Git
 
 ## Features
@@ -24,18 +31,19 @@ To run this project locally, you need to have the following software installed:
 - Product browsing and searching
 - Shopping cart management
 - Order placement and tracking
-- Razorpay Payment integration
 
 ## Getting Started
 
 1. Clone the repository:
 
    ```shell
-   git clone https://github.com/your-username/organica.git
-   cd organica
+   git clone https://github.com/iamprashantgavate/Vegetable-Delivery-FullStack.git
+   cd Vegetable-Delivery-FullStack
    ```
 
 2. Set up the database:
+   
+   - 
 
    - Create a MySQL database and configure the connection details in `backend/src/main/resources/application.properties` file. 
 
