@@ -48,14 +48,11 @@ sudo apt install mysql-server -y
 sudo apt install git -y
 ```
 
-✨ Features
-User authentication & authorization using JWT
-
-Browse and search products
-
-Manage shopping cart
-
-Place and track orders
+## ✨ Features
+- User authentication & authorization using JWT
+- Browse and search products
+- Manage shopping cart
+- Place and track orders
 
 📥 Getting Started
 1. Clone the repository
