@@ -55,27 +55,27 @@ sudo apt install git -y
 - Place and track orders
 
 ## 📥 Getting Started
-# 1. Clone the repository
+ 1. Clone the repository
 ```bash
 git clone https://github.com/iamprashantgavate/Vegetable-Delivery-FullStack.git
 cd Vegetable-Delivery-FullStack
 ```
-# 2. Set up the database
+ 2. Set up the database
 ```bash
 cd ./init
 sudo mysql < init.sql
 ```
-# 3. Configure Application Properties
+ 3. Configure Application Properties
 Edit backend/src/main/resources/application.properties:
 
-properties
-
+# application.properties
+- change the DB Connections inside file Server/src/main/resources/application.properties
+```bash
 spring.datasource.url=jdbc:mysql://localhost:3306/organica
 spring.datasource.username=admin
 spring.datasource.password=12345678
-
-# Optional: change server port
 server.port=9090
+```
 4. Backend Setup
 ```bash
 cd Server
@@ -92,20 +92,13 @@ Expected output: "Organica Demo App Running!"
 cd Client
 npm install
 npm start &
-Access frontend at http://localhost:3000
 ```
-🗂 Project Structure
+Access frontend at http://localhost:3000
 
-Vegetable-Delivery-FullStack/
-├─ Client/                # React frontend
-├─ Server/                # Spring Boot backend
-├─ init/                  # Database scripts
-└─ README.md
-🔧 Future Improvements
-Add user roles (admin/customer)
 
-Integrate payment gateway
 
-Improve responsive UI/UX
-
-Add unit & integration tests
+# 🔧 Future Improvements
+- Add user roles (admin/customer)
+- Integrate payment gateway
+- Improve responsive UI/UX
+- Add unit & integration tests
