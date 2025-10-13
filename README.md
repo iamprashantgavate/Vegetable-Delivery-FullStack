@@ -1,135 +1,113 @@
-# Organica - Full Stack E-commerce Project
+# 🥦 Organica - Full Stack E-commerce Project
 
-A full-stack web application for ordering fresh vegetables online.
+[![Java](https://img.shields.io/badge/Java-17-orange?logo=java)](https://www.oracle.com/java/)
+[![Spring Boot](https://img.shields.io/badge/SpringBoot-3.1.0-brightgreen?logo=spring)](https://spring.io/projects/spring-boot)
+[![React](https://img.shields.io/badge/React-18.2.0-blue?logo=react)](https://reactjs.org/)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-lightblue?logo=mysql)](https://www.mysql.com/)
+[![License](https://img.shields.io/badge/License-MIT-yellow)](LICENSE)
 
+**Organica** is a full-stack web application for ordering fresh vegetables online. It provides a smooth user experience with product browsing, shopping cart, and order tracking features.
 
-## Tech Stack
+---
 
-- Backend Framework: Spring Boot
-- Frontend Framework: React.js
-- Database: MySQL
+## 🚀 Tech Stack
 
-## Prerequisites
+- **Backend:** Spring Boot  
+- **Frontend:** React.js  
+- **Database:** MySQL  
+- **Authentication:** JWT  
+- **Build Tools:** Maven, Node.js/npm  
 
-To run this project locally, you need to have the following software installed:
+---
 
-- JDK 17
+## ⚙️ Prerequisites
 
+Before running locally, ensure the following are installed:
+
+### 1. JDK 17
+```bash
 sudo apt install openjdk-17-jdk -y
 java --version
-
-- Node.js
+2. Node.js & npm
+bash
+Copy code
 sudo apt install -y curl build-essential
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt install -y nodejs
 node -v
 npm -v
+3. MySQL Server
+bash
+Copy code
+sudo apt update
+sudo apt install mysql-server -y
+4. Git
+bash
+Copy code
+sudo apt install git -y
+✨ Features
+User authentication & authorization using JWT
 
+Browse and search products
 
-- MySQL Server
-   ```shell
-  sudo apt update
-  apt install mysql-server -y
-   ```
-- Git
-```shell
-  sudo apt install git 
-  ```
+Manage shopping cart
 
-## Features
+Place and track orders
 
-- User authentication and authorization using JWT
-- Product browsing and searching
-- Shopping cart management
-- Order placement and tracking
+📥 Getting Started
+1. Clone the repository
+bash
+Copy code
+git clone https://github.com/iamprashantgavate/Vegetable-Delivery-FullStack.git
+cd Vegetable-Delivery-FullStack
+2. Set up the database
+bash
+Copy code
+cd ./init
+sudo mysql < init.sql
+3. Configure Application Properties
+Edit backend/src/main/resources/application.properties:
 
-## Getting Started
+properties
+Copy code
+spring.datasource.url=jdbc:mysql://localhost:3306/organica
+spring.datasource.username=admin
+spring.datasource.password=12345678
 
-1. Clone the repository:
+# Optional: change server port
+server.port=9090
+4. Backend Setup
+bash
+Copy code
+cd Server
+mvn clean package -DskipTests
+cd target
+java -jar organica-0.0.1-SNAPSHOT.jar &
+Test backend at http://localhost:9090
 
-   ```shell
-   git clone https://github.com/iamprashantgavate/Vegetable-Delivery-FullStack.git
-   cd Vegetable-Delivery-FullStack
-   ```
+Expected output: "Organica Demo App Running!"
 
-2. Set up the database:
-   
-   - cd ./init
-  sudo mysql < init.sql
+5. Frontend Setup
+bash
+Copy code
+cd Client
+npm install
+npm start &
+Access frontend at http://localhost:3000
 
-   
+🗂 Project Structure
+csharp
+Copy code
+Vegetable-Delivery-FullStack/
+├─ Client/                # React frontend
+├─ Server/                # Spring Boot backend
+├─ init/                  # Database scripts
+└─ README.md
+🔧 Future Improvements
+Add user roles (admin/customer)
 
-3. Application Properties
+Integrate payment gateway
 
-   To configure the application properties, follow these steps:
+Improve responsive UI/UX
 
-   - Open the `backend/src/main/resources/application.properties` file.
-
-   - Configure the MySQL database connection properties by updating the following lines:
-
-     ```
-     spring.datasource.url=jdbc:mysql://localhost:3306/organica
-     spring.datasource.username=admin
-     spring.datasource.password=12345678
-     ```
-
-
-  
-   - (Optional) If you want to change the server port, update the following line:
-
-     ```
-     server.port=9090
-     ```
-
-   - Save the `application.properties` file.
-
-4. Backend Setup:
-
-   - Navigate to the `Server` directory:
-
-     ```shell
-     cd server
-     ```
-
-   - Build and run the Spring Boot application:
-
-     ```shell
-     mvn clean package -DskipTests
-     cd tartget
-     java -jar organica-0.0.1-SNAPSHOT.jar &
-     ```
-   Test your backend at `http://localhost:9090/`
-   - Expected output - Organica Demo App Running!
-
-   The backend server should now be running now.......
-
-5. Frontend Setup:
-
-   - Navigate to the `Client` directory:
-
-     ```shell
-     cd Client
-     ```
-
-   - Install the dependencies:
-
-     ```shell
-     npm install
-     ```
-
-   - Start the React development server:
-
-     ```shell
-     npm start & 
-     ```
-
-   The frontend server should now be running on `http://localhost:3000`.
-
-6. Open your web browser and visit `http://localhost:3000` to access the web application for ordering fresh vegetables online.
-
-
-
-
-
-
-
+Add unit & integration tests
