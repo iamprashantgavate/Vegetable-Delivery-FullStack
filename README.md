@@ -54,18 +54,18 @@ sudo apt install git -y
 - Manage shopping cart
 - Place and track orders
 
-📥 Getting Started
-1. Clone the repository
+## 📥 Getting Started
+# 1. Clone the repository
 ```bash
 git clone https://github.com/iamprashantgavate/Vegetable-Delivery-FullStack.git
 cd Vegetable-Delivery-FullStack
 ```
-2. Set up the database
+# 2. Set up the database
 ```bash
 cd ./init
 sudo mysql < init.sql
 ```
-3. Configure Application Properties
+# 3. Configure Application Properties
 Edit backend/src/main/resources/application.properties:
 
 properties
