@@ -30,7 +30,7 @@ sudo apt install openjdk-17-jdk -y
 java --version
 ```
 
-2. Node.js & npm
+### 2. Node.js & npm
 ```bash
 sudo apt install -y curl build-essential
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
@@ -38,12 +38,12 @@ sudo apt install -y nodejs
 node -v
 npm -v
 ```
-3. MySQL Server
+### 3. MySQL Server
 ```bash
 sudo apt update
 sudo apt install mysql-server -y
 ```
-4. Git
+### 4. Git
 ```bash
 sudo apt install git -y
 ```
