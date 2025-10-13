@@ -15,7 +15,15 @@ To run this project locally, you need to have the following software installed:
 
 - JDK 17
 
+sudo apt install openjdk-17-jdk -y
+java --version
+
 - Node.js
+sudo apt install -y curl build-essential
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt install -y nodejs
+node -v
+npm -v
 
 
 - MySQL Server
@@ -24,6 +32,9 @@ To run this project locally, you need to have the following software installed:
   apt install mysql-server -y
    ```
 - Git
+```shell
+  sudo apt install git 
+  ```
 
 ## Features
 
@@ -43,9 +54,10 @@ To run this project locally, you need to have the following software installed:
 
 2. Set up the database:
    
-   - 
+   - cd ./init
+  sudo mysql < init.sql
 
-   - Create a MySQL database and configure the connection details in `backend/src/main/resources/application.properties` file. 
+   
 
 3. Application Properties
 
@@ -57,20 +69,17 @@ To run this project locally, you need to have the following software installed:
 
      ```
      spring.datasource.url=jdbc:mysql://localhost:3306/organica
-     spring.datasource.username=your-username
-     spring.datasource.password=your-password
+     spring.datasource.username=admin
+     spring.datasource.password=12345678
      ```
 
-     Replace `your-username` and `your-password` with your MySQL database credentials.
 
   
    - (Optional) If you want to change the server port, update the following line:
 
      ```
-     server.port=8080
+     server.port=9090
      ```
-
-     Replace `8080` with the desired port number.
 
    - Save the `application.properties` file.
 
@@ -85,10 +94,14 @@ To run this project locally, you need to have the following software installed:
    - Build and run the Spring Boot application:
 
      ```shell
-     ./mvnw spring-boot:run
+     mvn clean package -DskipTests
+     cd tartget
+     java -jar organica-0.0.1-SNAPSHOT.jar &
      ```
+   Test your backend at `http://localhost:9090/`
+   - Expected output - Organica Demo App Running!
 
-   The backend server should now be running on `http://localhost:8080`.
+   The backend server should now be running now.......
 
 5. Frontend Setup:
 
@@ -107,29 +120,16 @@ To run this project locally, you need to have the following software installed:
    - Start the React development server:
 
      ```shell
-     npm start
+     npm start & 
      ```
 
    The frontend server should now be running on `http://localhost:3000`.
 
-6. Open your web browser and visit `http://localhost:3000` to access the Organica application.
+6. Open your web browser and visit `http://localhost:3000` to access the web application for ordering fresh vegetables online.
 
 
-## Contributing
-
-Contributions are welcome! If you want to contribute to Organica, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature/bug fix.
-3. Make your changes and commit them.
-4. Push your changes to your forked repository.
-5. Submit a pull request to the main repository.
 
 
-## Contact
 
-If you have any questions or suggestions, feel free to contact the project maintainers:
-
-- Vivek Kakadiya - vivek.kakadiya111@gmail.com
 
 
