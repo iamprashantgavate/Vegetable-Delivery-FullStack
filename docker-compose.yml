@@ -1,0 +1,41 @@
+version: "3.8"
+
+services:
+  db:
+    image: mysql:8
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345678
+      MYSQL_DATABASE: organica
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./init/init.sql:/docker-entrypoint-initdb.d/init.sql  # init SQL
+
+  backend:
+    build: ./Server
+    container_name: organica-backend
+    ports:
+      - "9090:9090"
+    environment:
+      - DB_URL=jdbc:mysql://db:3306/organica
+      - DB_USERNAME=admin
+      - DB_PASSWORD=12345678
+    depends_on:
+      - db
+    restart: always
+
+  frontend:
+    build: ./Client
+    container_name: organica-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    restart: always
+
+volumes:
+  mysql_data:
+
