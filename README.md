@@ -28,14 +28,16 @@ Before running locally, ensure the following are installed:
 ```bash
 sudo apt install openjdk-17-jdk -y
 java --version
+```
+
 2. Node.js & npm
-bash
-Copy code
+```
 sudo apt install -y curl build-essential
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt install -y nodejs
 node -v
 npm -v
+```
 3. MySQL Server
 bash
 Copy code
