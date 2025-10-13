@@ -68,7 +68,7 @@ sudo mysql < init.sql
  3. Configure Application Properties
 Edit backend/src/main/resources/application.properties:
 
-# application.properties
+ application.properties
 - change the DB Connections inside file Server/src/main/resources/application.properties
 ```bash
 spring.datasource.url=jdbc:mysql://localhost:3306/organica
