@@ -31,7 +31,7 @@ java --version
 ```
 
 2. Node.js & npm
-```
+```bash
 sudo apt install -y curl build-essential
 curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
 sudo apt install -y nodejs
@@ -39,14 +39,15 @@ node -v
 npm -v
 ```
 3. MySQL Server
-bash
-Copy code
+```bash
 sudo apt update
 sudo apt install mysql-server -y
+```
 4. Git
-bash
-Copy code
+```bash
 sudo apt install git -y
+```
+
 ✨ Features
 User authentication & authorization using JWT
 
@@ -58,20 +59,20 @@ Place and track orders
 
 📥 Getting Started
 1. Clone the repository
-bash
-Copy code
+```bash
 git clone https://github.com/iamprashantgavate/Vegetable-Delivery-FullStack.git
 cd Vegetable-Delivery-FullStack
+```
 2. Set up the database
-bash
-Copy code
+```bash
 cd ./init
 sudo mysql < init.sql
+```
 3. Configure Application Properties
 Edit backend/src/main/resources/application.properties:
 
 properties
-Copy code
+
 spring.datasource.url=jdbc:mysql://localhost:3306/organica
 spring.datasource.username=admin
 spring.datasource.password=12345678
@@ -79,27 +80,25 @@ spring.datasource.password=12345678
 # Optional: change server port
 server.port=9090
 4. Backend Setup
-bash
-Copy code
+```bash
 cd Server
 mvn clean package -DskipTests
 cd target
 java -jar organica-0.0.1-SNAPSHOT.jar &
+```
 Test backend at http://localhost:9090
 
 Expected output: "Organica Demo App Running!"
 
 5. Frontend Setup
-bash
-Copy code
+```bash
 cd Client
 npm install
 npm start &
 Access frontend at http://localhost:3000
-
+```
 🗂 Project Structure
-csharp
-Copy code
+
 Vegetable-Delivery-FullStack/
 ├─ Client/                # React frontend
 ├─ Server/                # Spring Boot backend
