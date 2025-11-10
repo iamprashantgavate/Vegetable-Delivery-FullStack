@@ -28,5 +28,15 @@ EXPOSE 9090
 RUN addgroup -S spring && adduser -S spring -G spring
 USER spring
 
+<<<<<<< HEAD
 # Run the app
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+=======
+# Use a non-root user for security
+RUN addgroup -S spring && adduser -S spring -G spring
+USER spring
+
+# Run the app
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+
+>>>>>>> 6c32020 (variablized frontend and backend)
