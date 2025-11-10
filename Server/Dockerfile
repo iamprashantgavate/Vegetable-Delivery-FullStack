@@ -1,29 +1,32 @@
-FROM maven:3.9.6-eclipse-temurin-17 AS build
+# ---------- Stage 1: Build ----------
+FROM maven:3.9.6-eclipse-temurin-17 AS builder
 
-# Set working directory inside the container
 WORKDIR /app
 
-# Copy pom.xml and download dependencies first (for caching)
+# Copy only dependency files first (for better caching)
 COPY pom.xml .
-RUN mvn dependency:go-offline
+RUN mvn -B dependency:go-offline
 
-# Copy all project files
-COPY . .
+# Copy source code
+COPY src ./src
 
-# Build the project and create JAR
-RUN mvn clean package -DskipTests
+# Build without tests
+RUN mvn -B clean package -DskipTests
 
-# ---------- Stage 2: Run the application ----------
-FROM openjdk:17-oracle
 
-# Set working directory
+# ---------- Stage 2: Runtime ----------
+FROM eclipse-temurin:17-jre-alpine
+
 WORKDIR /app
 
-# Copy the built JAR from the previous stage
-COPY --from=build /app/target/organica-0.0.1-SNAPSHOT.jar myapp.jar
+# Copy JAR from builder stage
+COPY --from=builder /app/target/organica-0.0.1-SNAPSHOT.jar app.jar
 
-# Expose the port your Spring Boot app runs on
+# Expose port
 EXPOSE 9090
+# Use a non-root user for security
+RUN addgroup -S spring && adduser -S spring -G spring
+USER spring
 
-# Run the JAR
-CMD ["java", "-jar", "myapp.jar"]
+# Run the app
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
