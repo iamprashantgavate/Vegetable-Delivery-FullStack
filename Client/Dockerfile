@@ -12,6 +12,10 @@ RUN npm ci
 # Copy rest of the project files
 COPY . .
 
+ARG REACT_APP_BACKEND_URL
+ENV REACT_APP_BACKEND_URL=$REACT_APP_BACKEND_URL
+RUN echo "Building with backend: $REACT_APP_BACKEND_URL"
+
 # Build the app
 RUN npm run build
 

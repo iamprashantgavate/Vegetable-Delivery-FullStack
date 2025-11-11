@@ -5,7 +5,7 @@ const axiosFetch = async ({ url, method, data = null }) => {
     const token = sessionStorage.getItem("token"); // don't default to '{}'
 
     const response = await axios.request({
-      url: "${process.env.REACT_APP_BACKEND_URL}/" + url, // backend URL
+      url: `${process.env.REACT_APP_BACKEND_URL}/${url}` + url, // backend URL
       method,
       data,
       headers: token

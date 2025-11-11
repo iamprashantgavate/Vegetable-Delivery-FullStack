@@ -27,7 +27,7 @@ export const ProductCard = (props) => {
     if(sessionStorage.getItem("token")===null){
       navigate("/login");
     }
-    const res = await fetch("${process.env.REACT_APP_BACKEND_URL}/cart/addproduct", {
+    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/product/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
