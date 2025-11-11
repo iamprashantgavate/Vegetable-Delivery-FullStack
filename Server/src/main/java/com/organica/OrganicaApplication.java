@@ -31,6 +31,7 @@ public class OrganicaApplication {
                     .allowedOrigins("*")
                     .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                     .allowedHeaders("*");
+					.allowCredentials(false);
 			}
 		};
 	}
