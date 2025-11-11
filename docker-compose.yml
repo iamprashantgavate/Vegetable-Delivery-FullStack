@@ -31,7 +31,7 @@ services:
     build: ./Client
     container_name: organica-frontend
     ports:
-      - "3000:3000"
+      - "3000:80"
     depends_on:
       - backend
     restart: always
