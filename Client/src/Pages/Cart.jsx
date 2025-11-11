@@ -17,7 +17,8 @@ export const Cart = () => {
       const fatchCart = async () => {
         // get cart item
         console.log(token);
-        const res = await fetch("${process.env.REACT_APP_BACKEND_URL}/cart/1", {headers: {
+        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/cart/1`, {
+          headers: {
             "Content-Type": "application/json",
             "Authorization": "Bearer "+token
           },

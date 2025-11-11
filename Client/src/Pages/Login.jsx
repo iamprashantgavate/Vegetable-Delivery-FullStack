@@ -41,7 +41,7 @@ export const Login = () => {
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const res = await fetch("${process.env.REACT_APP_BACKEND_URL}/auth/singin", {
+    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/singin`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
