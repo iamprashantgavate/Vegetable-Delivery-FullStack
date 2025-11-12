@@ -36,7 +36,7 @@ jobs:
             push: true
             tags: prashant6749/organica-backend:latest
 
-  job: deploy:
+  deploy:
     needs: build-and-deploy
     runs-on: ubuntu-latest
     steps:
