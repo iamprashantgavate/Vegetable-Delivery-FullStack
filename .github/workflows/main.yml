@@ -57,7 +57,7 @@ jobs:
                 # --- Clone or update repo ---
                 if [ ! -d "Vegetable-Delivery-FullStack" ]; then
                   echo "📦 Cloning repository for the first time..."
-                  git clone https://github.com/prashant6749/Vegetable-Delivery-FullStack.git
+                  git clone https://github.com/iamprashantgavate/Vegetable-Delivery-FullStack.git
                 else
                   echo "🔄 Repository exists. Pulling latest changes..."
                   cd Vegetable-Delivery-FullStack
