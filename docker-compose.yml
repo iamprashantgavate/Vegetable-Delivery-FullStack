@@ -15,7 +15,7 @@ services:
       - ./init/init.sql:/docker-entrypoint-initdb.d/init.sql  # init SQL
 
   backend:
-    build: ./Server
+    image: prashant6749/organica-backend:${TAG}
     container_name: organica-backend
     ports:
       - "9090:9090"
@@ -28,19 +28,15 @@ services:
     restart: always
 
   frontend:
-    build:
-      context: ./Client
-      args:
-        REACT_APP_BACKEND_URL: ${REACT_APP_BACKEND_URL}
+    image: prashant6749/organica-frontend:${TAG}
     container_name: organica-frontend
-    env_file:
-      - ./Client/.env
     ports:
       - "3000:80"
+    environment:
+      - REACT_APP_BACKEND_URL=http://<EC2_PUBLIC_IP>:9090
     depends_on:
       - backend
     restart: always
 
 volumes:
   mysql_data:
-
